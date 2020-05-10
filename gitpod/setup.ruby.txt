@@ -1,0 +1,46 @@
+[Setup]
+
+rvm install 2.7では動かない
+Railsのサンプルワークスペースには入っているけど入れ方がわからない
+https://www.gitpod.io/docs/languages/ruby/
+
+brew update
+brew install rbenv ruby-build
+rbenv install 2.7.1
+rbenv init 2>> ~/.bash_profile
+rbenv rehash
+source ~/.bash_profile
+
+which ruby #~/.rbenv/shims/ruby
+ruby -v # 2.7.1
+
+[Bundler]
+rbenv exec gem install bundler
+rbenv rehash
+rbenv exec bundle init
+
+[gems]
+gem install ruby-debug-ide rcodetools ruby-lint reek faster debride
+gem list rubocop ruby-debug-ide debase rcodetools ruby-lint reek faster debride
+
+[VS Extensions]
+ Ruby
+   https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby
+ VScode Ruby
+   https://marketplace.visualstudio.com/items?itemName=wingrunr21.vscode-ruby
+
+[Todo、参考サイト]
+  Language Server有効化など設定変更
+
+　Bundlerを使ったGem管理について
+　https://qiita.com/mochikichi321/items/ee0b7133524816f73e60
+
+　VSCodeで最低限のRuby環境構築 - 設定編
+　https://impsbl.hatenablog.jp/entry/RubyInVSCode1
+
+　VSCodeでRuby On Railsを快適に書きたい
+　https://qiita.com/sensuikan1973/items/219a843e4654e6c2e10d
+
+　VSCodeでRubyを書く準備
+　https://qiita.com/yumikokh/items/98be01df144c41d60e1e
+
