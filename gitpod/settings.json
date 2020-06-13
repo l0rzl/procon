@@ -1,0 +1,36 @@
+{
+    "editor.hover.delay": 400,
+    "editor.rulers": [80, 100],
+//    "files.insertFinalNewline": true,
+    "workbench.iconTheme": "theia-file-icons",
+    "solargraph.completion": true,
+    "solargraph.useBundler": true,
+    "solargraph.definitions": true,
+    "solargraph.diagnostics": true,
+    "solargraph.formatting": false,
+    "solargraph.hover": true,
+    "solargraph.symbols": true,
+    "ruby.format": false, //"rubocop",
+    "ruby.intellisense": false, //"rubyLocate",
+    "ruby.useBundler": true,
+    "ruby.useLanguageServer": false,
+    "ruby.codeCompletion": false, //"rcodetools",
+    "ruby.lint": {},
+    "ruby.locate": {
+        "exclude": "{**/@(test|spec|tmp|.*),**/@(test|spec|tmp|.*)/**,**/*_spec.rb}",
+        "include": "**/*.rb"
+    },
+//    "ruby.lintDebounceTime": 5000,
+//    "ruby.lint": {
+//        "debride": true,
+//        "fasterer": true,
+//        "rubocop": {
+//            "useBundler": true // enable rubocop via bundler
+//        },
+//        "reek": {
+//            "useBundler": true // enable reek via bundler
+//        }
+//        "ruby": true //Runs ruby -wc
+////      "ruby-lint": false
+//    },
+}
