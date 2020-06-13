@@ -1,0 +1,25 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  "version": "0.2.0",
+  "configurations": [
+      {
+          "name": "Debug Local File",
+          "type": "Ruby",
+          "request": "launch",
+          "env": {"GEM_HOME":"/workspace/.rvm"},
+          "cwd": "${workspaceRoot}",
+          "program": "${workspaceRoot}/main.rb",
+          "useBundler": true
+      },
+      {
+          "name": "Listen for rdebug-ide",
+          "type": "Ruby",
+          "cwd": "${workspaceRoot}",
+          "request": "attach",
+          "remoteHost": "127.0.0.1",
+          "remotePort": "1234",
+          "remoteWorkspaceRoot": "${workspaceRoot}"
+      },
+  ]
+}
