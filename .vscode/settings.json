@@ -1,0 +1,13 @@
+{
+    "editor.formatOnSave": false, // Prettier
+    "editor.formatOnType": false, // Prettier
+    "editor.detectIndentation": true,
+    "editor.tabSize": 4,
+    "solargraph.diagnostics": false,
+    "[ruby]": {
+        "editor.formatOnSave": false,
+        "editor.detectIndentation": true,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+    },
+}
