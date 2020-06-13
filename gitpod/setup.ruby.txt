@@ -1,36 +1,53 @@
 [Setup]
 
-rvm install 2.7では動かない
-Railsのサンプルワークスペースには入っているけど入れ方がわからない
+rvm install 2.7.1がさっぱり動かない　(dev.toに入っている通りなのに)
+solargraphが動かないので入れてはいけない (ほんとか??)
+https://github.com/gitpod-io/workspace-images/commit/e9281a207c4c6b4c7df2e91e9ec81f36ed0652ae
 https://www.gitpod.io/docs/languages/ruby/
 
-brew update
-brew install rbenv ruby-build
-rbenv install 2.7.1
-rbenv init 2>> ~/.bash_profile
-rbenv rehash
-source ~/.bash_profile
+brewでrbenvから入れるのはok
+./setup.rbenv.sh
 
-which ruby #~/.rbenv/shims/ruby
-ruby -v # 2.7.1
 
-[Bundler]
-rbenv exec gem install bundler
-rbenv rehash
-rbenv exec bundle init
+[IDE設定 Ctrl+,]
+ File - Settings - Open Preferences
 
-[gems]
-gem install ruby-debug-ide rcodetools ruby-lint reek faster debride
-gem list rubocop ruby-debug-ide debase rcodetools ruby-lint reek faster debride
+　・Ruby入力支援
+    "ruby.format": "rubocop",
+    "ruby.intellisense": "rubyLocate",
+    "ruby.codeCompletion": "rcodetools",
+　・静的解析ツール
+    "ruby.lintDebounceTime": 5000, //default:500
+    "ruby.lint": {
+        "debride": true,
+        "fasterer": true,
+        "rubocop": { "useBundler": true },
+        "reek": { "useBundler": true }
+        "ruby": false //Runs ruby -wc
+        "ruby-lint": false // 古いかも
+    },
+    "ruby.useBundler": true,
+　・Solergraph を使うなら falseに
+    "ruby.useLanguageServer": true,
+
+　・Solergraph - Ruby Language Server
+    "solargraph.completion": true,
+    "solargraph.definitions": true,
+    "solargraph.diagnostics": true, // Lint : "reporters" in .solargraph.yml 
+    "solargraph.formatting": false, // 保存時自動修正 by rubocop
+    "solargraph.hover": true,
+    "solargraph.symbols": true,
+    "solargraph.useBundler": true,
 
 [VS Extensions]
- Ruby
-   https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby
- VScode Ruby
-   https://marketplace.visualstudio.com/items?itemName=wingrunr21.vscode-ruby
+  See extensions.json
+
+[Keyboard Shortcut]
+  "Close Tab in Main Area": Ctrl+q
+  "Switch to Next Tab": Ctrl+Shift+PageDown
+  "Switch to Prev Tab": Ctrl+Shift+PageUp
 
 [Todo、参考サイト]
-  Language Server有効化など設定変更
 
 　Bundlerを使ったGem管理について
 　https://qiita.com/mochikichi321/items/ee0b7133524816f73e60
@@ -44,3 +61,5 @@ gem list rubocop ruby-debug-ide debase rcodetools ruby-lint reek faster debride
 　VSCodeでRubyを書く準備
 　https://qiita.com/yumikokh/items/98be01df144c41d60e1e
 
+  fastererを利用して、Rubyのコードの高速化する方法
+  https://dev.akito.io/gem-fasterer/

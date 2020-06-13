@@ -1,17 +1,28 @@
 ○ Gitpod 使い方メモ
 
-ワークスペースは14日放置すると消える？
-　使ったらこまめにコミットすべし
-
-ワークスペース以外は割とすぐ消えてまっさらになる
-　/home以下、brewのパッケージなど
-
 環境をカスタマイズしたら、設定ファイルを接続先リポジトリに書き残せば、VM起動時に自動で再構成される
 https://www.gitpod.io/docs/configuration/
 
-非特権ポートで待ち受け可能だが、外部からはproxy経由でアクセス
-URL: https://[port]-[host]-[region].gitpod.io にて接続
+ .gitpod.yml
+ .gitpod.Dockerfile
 
+GitpodのUser Preferencesがどこにあるのかわからない
+このフォルダのsettings.jsonに適宜内容を保存する
+
+launch.jsonはデバッガまたはテストツールの設定
+extensions.jsonはお勧めする拡張機能のリスト
+
+ワークスペースの寿命、とても重要
+https://www.gitpod.io/docs/life-of-workspace/
+
+　・最終利用日から14日放置にワークスペースが消える ※大事なものはピン止め
+　　念のため使ったらこまめにコミットすべし
+　・接続を切るか30分放置すると自動でstopする
+　　/workspace 以外のファイルは消えてしまう (/home配下、brewパッケージなど)
+
+
+非特権ポートで待ち受け可能、ただし外部からはproxy経由でアクセス
+URL: https://[port]-[host]-[region].gitpod.io にて接続
 
 gp - Command line interface for Gitpod
 ファイル、プレビューウィンドウ、ポートの制御など
